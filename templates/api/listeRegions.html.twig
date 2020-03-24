@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les régions de France{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center">La liste des régions</h1>
+    <div class="divider"></div>
+    <div class="row">
+        {% for maRegion in mesRegions %}
+        <div class="col-sm-4 col-md-3 mb-3">
+            <div class="card h-100 text-white border-warning bg-secondary text-center">
+                <div class="card-header">N° {{ maRegion.code }}</div>
+                <div class="card-body">
+                    <p class="card-text">{{ maRegion.nom }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

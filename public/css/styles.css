@@ -1,0 +1,32 @@
+.divider{
+    width: 150px;
+    height: 2px;
+    background: black;
+    margin: 0 auto 20px;
+
+}
+
+.fas.fa-chevron-left, .fas.fa-chevron-right{
+    background-image: none;
+    color:black;
+}
+.carousel-indicators{
+    bottom: 0;
+}
+.carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid black;
+   margin-top: 100px;
+}
+.carousel-indicators li.active{
+    background-color: black;
+}
+
+#myCarousel .carousel-item{
+    font-family: 'Holtwood One SC', serif;
+    font-size: 60px;
+    padding-bottom: 90px;
+    text-align: center;
+}

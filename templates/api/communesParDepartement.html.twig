@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Communes par région{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center">La liste des communes par département</h1>
+    <div class="divider"></div>
+    <form action="" method="get">
+        <div class="row">
+            <div class="col-md-10">
+               <div class="form-group">
+                   <select name="departement" id="region" class="form-control custom-select">
+                      {% for monDepartement in mesDepartements %}
+                          <option value="{{ monDepartement.code }}" {% if(app.request.query.get('departement') == monDepartement.code)%} selected {% endif %}>
+                              {{ monDepartement.code }}-{{ monDepartement.nom }}
+                          </option>
+                       {% endfor %}
+                   </select>
+               </div>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn border-warning btn-secondary">Rechercher</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        {% for commune in mesCommunes %}
+        <div class="col-sm-4 col-md-3 mb-3">
+            <div class="card h-100  text-white border-warning bg-secondary">
+                <div class="card-header">Code commune : {{ commune.code }}</div>
+                <div class="card-body">
+                    <p class="card-text">Commune : {{ commune.nom }}</p>
+                    <p class="card-text">Population : {{ commune.population }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
